@@ -1,6 +1,7 @@
 import { Brand } from "../ui/Brand";
 import { Container } from "../ui/Container";
 import { Icon } from "../ui/Icon";
+import { audiences } from "../../content/landing";
 
 const footerLink =
   "inline-flex min-h-11 items-center py-2 text-sm leading-relaxed text-muted hover:text-ink hover:underline underline-offset-4 text-left lg:min-h-0 lg:py-0 lg:text-xs";
@@ -13,12 +14,12 @@ export function Footer({ onDownload }: { onDownload: () => void }) {
           <div className="min-[400px]:col-span-2 lg:col-span-1">
             <Brand />
             <p className="mt-5 max-w-[400px] text-sm leading-[1.8] lg:text-xs text-muted">
-              Punto de venta simple, gratuito y diseñado para los pequeños
-              negocios que hacen grandes cosas.
+              Punto de venta para restaurantes, alquileres, granel, comercio por
+              unidad y servicios, con operación local en Android.
             </p>
             <span className="mt-4 inline-flex items-center gap-2 rounded bg-surface px-2.5 py-2 text-[10px]">
-              <Icon name="heart" size={12} />
-              Hecho para apoyar el comercio local
+              <Icon name="phone" size={12} />
+              Datos guardados en tu dispositivo
             </span>
           </div>
           <nav
@@ -43,18 +44,15 @@ export function Footer({ onDownload }: { onDownload: () => void }) {
             <h3 className="mb-1 text-sm font-semibold lg:text-xs">
               Casos de uso
             </h3>
-            <a className={footerLink} href="#cafeterias">
-              Cafeterías y panaderías
-            </a>
-            <a className={footerLink} href="#boutiques">
-              Boutiques y ropa
-            </a>
-            <a className={footerLink} href="#abarrotes">
-              Tiendas de barrio
-            </a>
-            <a className={footerLink} href="#servicios">
-              Servicios y barberías
-            </a>
+            {audiences.map((audience) => (
+              <a
+                className={footerLink}
+                href={`#${audience.id}`}
+                key={audience.id}
+              >
+                {audience.title}
+              </a>
+            ))}
           </nav>
           <nav
             className="flex min-w-0 flex-col items-start gap-1 lg:gap-3.5"
@@ -63,8 +61,8 @@ export function Footer({ onDownload }: { onDownload: () => void }) {
             <h3 className="mb-1 text-sm font-semibold lg:text-xs">
               Conoce Emprender
             </h3>
-            <a className={footerLink} href="#por-que-gratis">
-              Por qué es gratis
+            <a className={footerLink} href="#datos-y-respaldo">
+              Datos y respaldo
             </a>
             <a className={footerLink} href="#preguntas">
               Preguntas frecuentes
@@ -82,7 +80,7 @@ export function Footer({ onDownload }: { onDownload: () => void }) {
             © {new Date().getFullYear()} Emprender. Hecho para negocios
             independientes.
           </p>
-          <span>Menos complicaciones. Más posibilidades.</span>
+          <span>Catálogo, ventas y operaciones en Android.</span>
         </div>
       </Container>
     </footer>

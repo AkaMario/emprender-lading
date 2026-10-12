@@ -8,15 +8,16 @@ export function Audiences() {
     <Section id="para-quien">
       <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end lg:gap-12">
         <SectionHeading
-          eyebrow="TAN VERSÁTIL COMO TU NEGOCIO"
-          title="Creado para el comercio de todos los días."
+          eyebrow="CINCO TIPOS DE EMPRENDIMIENTO"
+          title="Elige el modelo de tu negocio."
         />
         <p className="max-w-[620px] text-sm leading-[1.8] text-muted lg:max-w-[370px]">
-          Ya sea que atiendas en un mostrador, un puesto móvil o una tienda
-          boutique, hay una forma más simple de llevar tu negocio.
+          Al configurar la app eliges un solo tipo para tu base de datos. Cada
+          modelo tiene su catálogo y sus operaciones; la elección queda guardada
+          y no se puede cambiar desde la app.
         </p>
       </div>
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 md:mt-10 lg:gap-5 xl:grid-cols-4">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 md:mt-10 lg:grid-cols-3 lg:gap-5">
         {audiences.map((audience) => (
           <article
             className="flex min-w-0 scroll-mt-24 flex-col items-start rounded-card border border-line/60 bg-white p-6 sm:min-h-[290px]"

@@ -7,9 +7,9 @@ export function Features() {
   return (
     <Section id="caracteristicas">
       <SectionHeading
-        eyebrow="LO ESENCIAL, BIEN HECHO"
-        title="Todo lo que tu comercio necesita. Nada de lo que te estorbe."
-        description="Menos fricción, más claridad. Herramientas pensadas para simplificar cada transacción y poner el foco donde importa: en tu negocio."
+        eyebrow="FUNCIONES DE EMPRENDER"
+        title="Herramientas para la operación diaria."
+        description="Registra lo que vendes y consulta la información de tu negocio. El catálogo, los reportes y las operaciones se adaptan al tipo que elijas al configurar la app."
       />
       <div className="mt-8 grid gap-4 sm:grid-cols-2 md:mt-10 lg:grid-cols-3 lg:gap-5">
         {features.map((feature) => (

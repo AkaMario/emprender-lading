@@ -19,7 +19,7 @@ npm run lint    # Revisa el código
 
 ```text
 src/
-├── assets/                 # APK original de distribución
+├── assets/                 # Icono de la app y QR de descarga
 ├── components/
 │   ├── layout/             # Header y Footer
 │   └── ui/                 # Button, Brand, AppIcon, Icon, IconTile, Container,
@@ -41,7 +41,7 @@ El estilo se implementa con utilidades Tailwind. Los colores y la tipografía se
 
 ## Diseño responsive
 
-La composición parte de móvil: botones apilados, tarjetas sin alturas mínimas y márgenes de 16 px. Desde 640 px, las características y los tipos de negocio se distribuyen en dos columnas. Desde 1024 px aparece la navegación completa y las características pasan a tres columnas; los tipos de negocio usan cuatro columnas desde 1280 px. El contenido se limita a 1200 px en pantallas grandes.
+La composición parte de móvil: botones apilados, tarjetas sin alturas mínimas y márgenes de 16 px. Desde 640 px, las características y los tipos de negocio se distribuyen en dos columnas. Desde 1024 px aparece la navegación completa y ambas cuadrículas pasan a tres columnas. El contenido se limita a 1200 px en pantallas grandes.
 
 El menú y la ventana de descarga permiten desplazamiento en pantallas horizontales. El menú se cierra al navegar, tocar fuera, pulsar Escape o pasar al diseño de escritorio. Los controles principales tienen un área táctil mínima de 44 px.
 
@@ -49,11 +49,17 @@ Verificado en Chrome con 11 tamaños de ventana entre 320 y 1920 px, incluyendo 
 
 ## Distribución del APK
 
-El archivo `src/assets/Emprender.apk` se importa como URL (`?url`). Vite lo copia a `dist/assets/` con un nombre versionado por contenido: **no se incluye en el JavaScript ni se descarga al abrir la página**. El enlace de descarga conserva el nombre `Emprender.apk`.
+La descarga apunta a GitHub Releases mediante la URL centralizada en `src/config/app.ts`:
 
-Para publicar una nueva versión, reemplaza ese archivo y vuelve a compilar. También puedes copiar `.env.example` a `.env.local` y configurar `VITE_APK_URL` con una URL HTTPS externa antes de compilar. En ese caso, el servidor externo debe enviar `Content-Disposition: attachment` para forzar la descarga entre dominios.
+```text
+https://github.com/AkaMario/emprender-lading/releases/download/app/Emprender.apk
+```
 
-La distribución actual incluye un APK de aproximadamente 108 MiB. El hosting debe admitir ese tamaño de archivo. `dist/` es un sitio estático y no requiere un backend.
+El APK se obtiene al solicitar la descarga. No se incluye una copia del APK en el código de la web ni en `dist/`.
+
+Para cambiar de versión o servidor, actualiza la URL de configuración, o copia `.env.example` a `.env.local` y configura `VITE_APK_URL` antes de compilar. El servidor externo debe enviar `Content-Disposition: attachment` para forzar la descarga entre dominios. Si el nuevo APK mantiene la misma URL, no hace falta recompilar la página.
+
+`dist/` es un sitio estático y no requiere un backend ni alojar el APK.
 
 ## Contenido y alcance
 
@@ -62,4 +68,6 @@ La distribución actual incluye un APK de aproximadamente 108 MiB. El hosting de
 - Ventanas con `dialog` nativo: foco, Escape y cierre al tocar el fondo.
 - Enlace para saltar al contenido, navegación semántica y respeto por movimiento reducido.
 
-Los textos parten de la propuesta del mockup. Antes de publicar, confirma las capacidades de inventario, reportes, respaldo e importación de la versión Android. Se omitieron métricas de rendimiento, garantías técnicas, enlaces legales y redes sociales que todavía no se han proporcionado.
+Los textos se contrastaron con el código local de React Native en `/home/muparela/Local Projects/POS EMPRENDIMIENTOS/`. La [referencia de funcionalidades verificadas](docs/verified-features.md) documenta las fuentes y las diferencias entre los cinco modelos de negocio. No se incluyen métricas de rendimiento ni promesas de precios futuros.
+
+La revisión describe las funciones implementadas en ese código fuente. No certifica que el APK publicado en GitHub se haya compilado desde la misma revisión ni sustituye una prueba de la app en Android. Al cambiar la app o publicar un APK, revisa también el contenido de la web.

@@ -19,6 +19,15 @@ const paths = {
   bolt: <path d="m13 2-9 12h7l-1 8 10-12h-7l1-8Z" />,
   box: <path d="M4 8h16v13H4zM3 3h18v5H3zM9 12h6" />,
   chart: <path d="M4 4v16h16M8 15l4-5 4 3 5-8M17 5h4v4" />,
+  calendar: (
+    <>
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M7 3v4m10-4v4M3 11h18M7 15h2m4 0h2m-8 3h2" />
+    </>
+  ),
+  ruler: (
+    <path d="m3 16 13-13 5 5L8 21l-5-5Zm10-10 2 2m-5 1 2 2m-5 1 2 2m-5 1 2 2" />
+  ),
   offline: (
     <path d="m3 3 18 18M7 7a5 5 0 0 0-1 3 5 5 0 0 0 0 10h12M12 5a5 5 0 0 1 5 5h1a5 5 0 0 1 4 8" />
   ),

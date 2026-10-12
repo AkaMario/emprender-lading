@@ -21,9 +21,9 @@ export function DownloadCta({ onDownload }: { onDownload: () => void }) {
               <br className="hidden sm:block" /> hoy mismo.
             </h2>
             <p className="mt-5 text-sm leading-[1.8] text-zinc-400">
-              Sin contratos, sin costos ocultos, sin complicaciones.
-              <br className="hidden sm:block" /> Una herramienta simple para
-              todo lo que estás construyendo.
+              Elige tu tipo de emprendimiento y registra tu catálogo.
+              <br className="hidden sm:block" /> Lleva las ventas y la operación
+              desde tu dispositivo Android.
             </p>
           </div>
           <div className="relative flex w-full shrink-0 flex-col items-center gap-3 sm:w-auto">

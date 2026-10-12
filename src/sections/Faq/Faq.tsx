@@ -10,7 +10,7 @@ export function Faq() {
         centered
         eyebrow="DUDAS RESUELTAS"
         title="Preguntas frecuentes"
-        description="Todo lo que necesitas saber antes de instalar y usar Emprender."
+        description="Conoce cómo se registran los pagos, dónde se guardan tus datos y qué opciones ofrece cada modelo."
       />
       <div className="mx-auto mt-8 grid max-w-[850px] gap-3 md:mt-10">
         {faqs.map((faq) => (

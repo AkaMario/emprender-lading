@@ -9,6 +9,32 @@
   --color-line: #e5e7eb;
   --color-brand: #111214;
   --radius-card: 1rem;
+  --animate-qr-cell-reveal: qr-cell-reveal 320ms ease-out both;
+  --animate-qr-scan: qr-scan 1.25s ease-in-out both;
+
+  @keyframes qr-cell-reveal {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes qr-scan {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    15%,
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
 }
 
 @layer base {

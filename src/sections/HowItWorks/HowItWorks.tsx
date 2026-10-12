@@ -8,8 +8,8 @@ export function HowItWorks() {
       <SectionHeading
         centered
         eyebrow="DEL ARCHIVO A TU MOSTRADOR"
-        title="Empezar es así de sencillo."
-        description="Tu Android y las ganas de hacer crecer tu negocio. Eso es lo primero."
+        title="Descarga, instala y configura."
+        description="Instala el APK en Android, crea tu usuario local y configura el tipo de emprendimiento antes de registrar tu catálogo."
       />
       <ol className="mx-auto mt-8 grid max-w-[1000px] gap-8 md:mt-10 md:grid-cols-3 lg:gap-14">
         {installationSteps.map((step) => (

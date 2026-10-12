@@ -3,7 +3,7 @@ import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import { Hero } from "../sections/Hero/Hero";
 import { Features } from "../sections/Features/Features";
-import { Purpose } from "../sections/Purpose/Purpose";
+import { DataBackup } from "../sections/DataBackup/DataBackup";
 import { Audiences } from "../sections/Audiences/Audiences";
 import { HowItWorks } from "../sections/HowItWorks/HowItWorks";
 import { Faq } from "../sections/Faq/Faq";
@@ -27,7 +27,7 @@ export function LandingPage() {
       <main id="contenido">
         <Hero onDownload={openDownload} />
         <Features />
-        <Purpose />
+        <DataBackup />
         <Audiences />
         <HowItWorks />
         <Faq />

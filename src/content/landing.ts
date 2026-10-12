@@ -4,7 +4,7 @@ export const navigation = [
   { label: "Características", href: "#caracteristicas" },
   { label: "Cómo funciona", href: "#como-funciona" },
   { label: "Para quién es", href: "#para-quien" },
-  { label: "Por qué es gratis", href: "#por-que-gratis" },
+  { label: "Datos y respaldo", href: "#datos-y-respaldo" },
   { label: "Preguntas frecuentes", href: "#preguntas" },
 ] as const;
 
@@ -15,108 +15,116 @@ type ContentCard = {
   detail: string;
 };
 
-// Contenido de la propuesta inicial. Validar las capacidades con cada versión de la app.
+// Contrastado con el proyecto React Native. Fuentes y alcance en docs/verified-features.md.
 export const features: ContentCard[] = [
   {
-    icon: "bolt",
-    title: "Cobro ultra rápido",
+    icon: "receipt",
+    title: "Ventas y pagos registrados",
     description:
-      "Menos pasos entre elegir un producto y cerrar una venta. Una interfaz clara para que cada cobro fluya, incluso en las horas de mayor movimiento.",
-    detail: "MENOS CLICS. MÁS VENTAS.",
+      "Arma el carrito, consulta el total en pesos colombianos y registra el pago en efectivo o transferencia. Verifica la transferencia antes de confirmar la venta.",
+    detail: "REGISTRO MANUAL DEL PAGO",
   },
   {
     icon: "box",
-    title: "Inventario en tiempo real",
+    title: "Catálogo e inventario",
     description:
-      "Mantén tus productos organizados, consulta sus existencias y conoce lo que necesita reposición. Todo desde un mismo lugar.",
-    detail: "TU CATÁLOGO, BAJO CONTROL",
+      "En restaurantes, organiza platos, recetas e insumos. En comercio y granel, lleva productos y existencias. Las ventas descuentan el inventario correspondiente.",
+    detail: "SEGÚN EL TIPO DE NEGOCIO",
   },
   {
     icon: "chart",
-    title: "Reportes claros y honestos",
+    title: "Reportes de ventas",
     description:
-      "Conoce cómo va tu negocio sin perderte en hojas de cálculo. Consulta tus ventas y encuentra los productos que más se venden.",
-    detail: "INFORMACIÓN PARA DECIDIR MEJOR",
+      "Consulta ventas e ingresos por categoría. Restaurantes incluye filtros por periodo y platos más vendidos; los otros modelos muestran ventas del día y acumuladas.",
+    detail: "CALCULADOS CON TUS OPERACIONES",
   },
   {
     icon: "offline",
-    title: "Tu negocio sigue en marcha",
+    title: "Operación local",
     description:
-      "Un punto de venta pensado para acompañar la operación diaria de tu comercio, con una experiencia directa y sin distracciones.",
-    detail: "DISEÑADO PARA EL DÍA A DÍA",
+      "El catálogo, las ventas y las operaciones se guardan en el dispositivo. Puedes registrar la actividad del negocio sin conexión a internet.",
+    detail: "DATOS EN TU DISPOSITIVO",
   },
   {
-    icon: "receipt",
-    title: "Cada venta, bien registrada",
+    icon: "calendar",
+    title: "Pedidos, reservas y citas",
     description:
-      "Lleva un registro ordenado de tus transacciones. Revisa lo que vendiste y mantén la información de tu negocio a la mano.",
-    detail: "ORDEN EN CADA TRANSACCIÓN",
+      "Restaurantes tiene seguimiento de preparación. Alquileres registra entregas, devoluciones y garantías. Servicios permite asignar citas a profesionales.",
+    detail: "CADA MODELO TIENE SU OPERACIÓN",
   },
   {
-    icon: "phone",
-    title: "Tu mostrador va contigo",
+    icon: "download",
+    title: "Respaldo manual",
     description:
-      "Convierte tu dispositivo Android en una herramienta de trabajo. Atiende desde tu tienda, un puesto móvil o donde esté tu próximo cliente.",
-    detail: "HECHO PARA ANDROID",
+      "Desde Configuración, exporta una copia de la base de datos y guárdala donde prefieras. Puedes importar un respaldo para restaurar la información del negocio.",
+    detail: "EXPORTAR E IMPORTAR BACKUP",
   },
 ];
 
-export const principles: ContentCard[] = [
+export const dataPractices: ContentCard[] = [
   {
-    icon: "noFees",
-    title: "Cero suscripciones",
+    icon: "phone",
+    title: "Información en el dispositivo",
     description:
-      "Sin cuotas mensuales ni comisiones sobre tus ventas. Tus ingresos son el resultado de tu trabajo y se quedan contigo.",
+      "La aplicación guarda el perfil del negocio y su operación en una base de datos local. No incluye sincronización automática entre dispositivos.",
     detail: "",
   },
   {
     icon: "lock",
-    title: "Tu negocio, tu información",
+    title: "Usuario local",
     description:
-      "Un espacio para organizar tus productos y tus ventas. Tú mantienes el control de la información de tu comercio.",
+      "Crea tu usuario con contraseña, PIN y pregunta de seguridad. El registro y el inicio de sesión se realizan con los datos guardados en la app.",
     detail: "",
   },
   {
-    icon: "phone",
-    title: "Instalación directa APK",
+    icon: "download",
+    title: "Tú guardas el respaldo",
     description:
-      "Descarga Emprender e instálalo directamente en tu dispositivo Android. Sin depender de una tienda de aplicaciones.",
+      "Usa «Realizar backup» para compartir y guardar el archivo .db. «Importar backup» reemplaza la base actual con la copia seleccionada y solicita iniciar sesión de nuevo.",
     detail: "",
   },
 ];
 
 export const audiences: (ContentCard & { id: string })[] = [
   {
-    id: "cafeterias",
+    id: "restaurantes",
     icon: "coffee",
-    title: "Cafeterías y panaderías",
+    title: "Restaurante y preparación",
     description:
-      "Del primer café al último pedido. Organiza tu catálogo y agiliza el cobro cuando tu barra está a tope.",
-    detail: "Cafeterías, panaderías, reposterías",
+      "Crea platos con recetas e insumos. Registra ventas por mesa, para llevar o a domicilio y sigue el estado de preparación de los pedidos.",
+    detail: "Menú, recetas e insumos",
   },
   {
-    id: "boutiques",
-    icon: "shirt",
-    title: "Boutiques y ropa",
+    id: "alquileres",
+    icon: "calendar",
+    title: "Alquiler y renta",
     description:
-      "Dale orden a tus colecciones y encuentra cada producto fácilmente. Más tiempo para atender, menos para buscar.",
-    detail: "Moda, calzado, accesorios",
+      "Registra activos y reservas con tarifas por hora, día o mes. Lleva entregas, devoluciones, mantenimiento y devolución o retención de garantías.",
+    detail: "Activos, periodos y garantías",
   },
   {
-    id: "abarrotes",
+    id: "granel",
+    icon: "ruler",
+    title: "Granel, peso y volumen",
+    description:
+      "Vende por ml, litros, gramos, kilos o metros. Ingresa la cantidad y la tara manualmente; registra el empaque como un artículo separado.",
+    detail: "Cantidades y precios proporcionales",
+  },
+  {
+    id: "comercio",
     icon: "store",
-    title: "Abarrotes y bazares",
+    title: "Comercio por unidad",
     description:
-      "Todos tus productos en un solo lugar. Lleva las ventas y el inventario de tu tienda sin complicaciones.",
-    detail: "Minimercados, bazares, papelerías",
+      "Organiza productos por SKU, variante y código de barras. Registra lotes y vencimientos, controla existencias y consulta los movimientos de inventario.",
+    detail: "Catálogo y venta por piezas",
   },
   {
     id: "servicios",
     icon: "scissors",
-    title: "Servicios y barberías",
+    title: "Servicios y contenido digital",
     description:
-      "Organiza tus servicios y productos de cuidado personal. Lleva un registro claro de cada venta de tu negocio.",
-    detail: "Barberías, salones, estudios",
+      "Agenda servicios con duración y profesional. Comparte enlaces y registra entregas digitales. Lleva planes de suscripción con renovaciones de cobro manual.",
+    detail: "Agenda, entregas y planes",
   },
 ];
 
@@ -135,22 +143,22 @@ export const installationSteps = [
   },
   {
     number: "03",
-    title: "Prepara tu negocio",
+    title: "Configura tu emprendimiento",
     description:
-      "Abre Emprender, organiza tus productos y empieza a llevar tus ventas de forma más sencilla.",
+      "Crea tu usuario local, escribe el nombre de tu negocio y elige uno de los cinco tipos. Después registra tu catálogo para comenzar a operar.",
   },
 ];
 
 export const faqs = [
   {
-    question: "¿Realmente no cobran nada por el servicio?",
+    question: "¿Necesito internet para usar Emprender?",
     answer:
-      "Emprender se propone como una herramienta gratuita para comercios independientes, sin suscripciones ni comisiones sobre tus ventas. Puedes descargar el APK directamente desde esta página.",
+      "La operación del negocio es local: puedes registrar ventas y consultar los datos guardados sin internet. Necesitas conexión para descargar el APK, realizar una transferencia en tu servicio bancario o abrir contenido alojado en una plataforma externa.",
   },
   {
-    question: "¿Necesito comprar hardware o terminales especiales?",
+    question: "¿La app procesa los pagos de mis clientes?",
     answer:
-      "Para instalar la aplicación necesitas un dispositivo Android compatible. Puedes empezar con tu teléfono o tablet; la compatibilidad con accesorios debe comprobarse según el dispositivo y la versión de la app.",
+      "La app registra pagos en efectivo o transferencia en pesos colombianos y calcula el cambio en efectivo. La transferencia se realiza por fuera de Emprender: verifica que recibiste el dinero antes de registrar la venta. No hay una pasarela de pago integrada.",
   },
   {
     question: "¿Cómo instalo el APK en mi teléfono?",
@@ -160,11 +168,21 @@ export const faqs = [
   {
     question: "¿Cómo se respaldan mis ventas e inventario?",
     answer:
-      "Las opciones de respaldo dependen de la versión instalada. Revisa las opciones de datos dentro de Emprender y conserva una copia de tu información antes de cambiar de dispositivo o desinstalar la aplicación.",
+      "En Configuración, toca «Realizar backup» y guarda el archivo .db fuera de la app. Para recuperarlo, usa «Importar backup». La restauración reemplaza los datos actuales con los del archivo y requiere iniciar sesión de nuevo. El respaldo es manual; no hay copia automática en la nube.",
   },
   {
     question: "¿Puedo importar mis productos actuales desde Excel?",
     answer:
-      "La compatibilidad y los formatos de importación dependen de la versión de Emprender. Consulta las opciones disponibles en el catálogo de la app antes de preparar o importar un archivo.",
+      "La app no incluye importación de productos desde Excel: el catálogo se registra dentro de Emprender. En el modelo de restaurante sí puedes exportar reportes de ventas como CSV para abrirlos en una hoja de cálculo. La importación de backup restaura una base de datos, no una hoja de Excel.",
+  },
+  {
+    question: "¿Puedo usar varios tipos de negocio al mismo tiempo?",
+    answer:
+      "Al configurar Emprender eliges un solo tipo de negocio para esa base de datos. Esa elección determina el catálogo y las operaciones disponibles. Una vez guardada, no se puede cambiar desde la app ni mezclar con otro modelo.",
+  },
+  {
+    question: "¿Las suscripciones y los accesos digitales son automáticos?",
+    answer:
+      "En el modelo de servicios, cada renovación se registra manualmente después de verificar el pago. Compartir un enlace o marcar una entrega o revocación solo actualiza el registro en Emprender; los permisos del cliente se gestionan en la plataforma externa donde está alojado el contenido.",
   },
 ];

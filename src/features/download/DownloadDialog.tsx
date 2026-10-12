@@ -1,7 +1,7 @@
 import { appConfig } from "../../config/app";
-import { AppIcon } from "../../components/ui/AppIcon";
 import { Dialog } from "../../components/ui/Dialog";
 import { Icon } from "../../components/ui/Icon";
+import { DownloadQr } from "./DownloadQr";
 
 export function DownloadDialog({
   open,
@@ -13,10 +13,6 @@ export function DownloadDialog({
   return (
     <Dialog open={open} onClose={onClose} titleId="download-dialog-title">
       <div className="px-5 pt-8 pb-6 sm:p-9">
-        <AppIcon className="mb-6 size-16" />
-        <p className="text-[10px] font-semibold tracking-widest text-muted uppercase">
-          Tu próximo paso
-        </p>
         <h2
           id="download-dialog-title"
           className="mt-2 text-2xl font-semibold tracking-[-.8px]"
@@ -24,8 +20,8 @@ export function DownloadDialog({
           Lleva Emprender a tu negocio.
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-muted">
-          Descarga la aplicación gratis e instálala directamente en tu teléfono
-          o tablet Android.
+          Descarga el APK e instálalo directamente en tu teléfono o tablet
+          Android.
         </p>
         <a
           href={appConfig.apkUrl}
@@ -35,10 +31,7 @@ export function DownloadDialog({
           <Icon name="download" size={18} />
           Descargar Emprender.apk
         </a>
-        <p className="mt-3 text-center text-[11px] text-muted">
-          Archivo APK · Para Android · Sin suscripción
-        </p>
-        <div className="mt-6 rounded-xl border border-line bg-surface p-4 sm:p-5">
+        {/* <div className="mt-6 rounded-xl border border-line bg-surface p-4 sm:p-5">
           <h3 className="text-xs font-semibold">Después de descargar</h3>
           <ol className="mt-4 space-y-3 text-[13px] leading-relaxed text-muted">
             <li className="flex gap-3">
@@ -51,14 +44,20 @@ export function DownloadDialog({
             </li>
             <li className="flex gap-3">
               <span className="font-semibold text-ink">03</span>Toca Instalar,
-              abre Emprender y prepara tu negocio.
+              abre Emprender, crea tu usuario local y elige tu tipo de negocio.
             </li>
           </ol>
-        </div>
-        <p className="mt-5 text-[11px] leading-relaxed text-muted">
-          ¿Estás en un computador? Abre esta página desde tu Android o
-          transfiere el archivo a tu dispositivo.
-        </p>
+        </div> */}
+        <figure className="mt-6 flex flex-col items-center border-t border-line pt-6 text-center">
+          <figcaption>
+            <p className="text-sm font-semibold">¿Estás en un computador?</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              Escanea este QR en tu teléfono Android para descargar la
+              aplicación.
+            </p>
+          </figcaption>
+          {open && <DownloadQr />}
+        </figure>
       </div>
     </Dialog>
   );
