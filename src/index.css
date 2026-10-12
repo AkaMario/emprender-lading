@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --color-ink: #17191c;
+  --color-muted: #62666d;
+  --color-surface: #f8f9fb;
+  --color-surface-alt: #f0f2f5;
+  --color-line: #e5e7eb;
+  --color-brand: #111214;
+  --radius-card: 1rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    color-scheme: light;
+  }
+
+  body {
+    min-width: 320px;
+    background: var(--color-surface);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body:has(dialog[open]) {
+    overflow: hidden;
+  }
+  button,
+  a,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  button:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid #365dc3;
+    outline-offset: 5px;
+  }
+  ::selection {
+    background: #dce3ef;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  dialog::backdrop {
+    background: #10131880;
+    backdrop-filter: blur(4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
