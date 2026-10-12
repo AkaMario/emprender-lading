@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import { Hero } from "../sections/Hero/Hero";
+import { ProductExperience } from "../sections/ProductExperience/ProductExperience";
 import { Features } from "../sections/Features/Features";
 import { DataBackup } from "../sections/DataBackup/DataBackup";
 import { Audiences } from "../sections/Audiences/Audiences";
@@ -26,6 +27,7 @@ export function LandingPage() {
       <Header onDownload={openDownload} />
       <main id="contenido">
         <Hero onDownload={openDownload} />
+        <ProductExperience />
         <Features />
         <DataBackup />
         <Audiences />
