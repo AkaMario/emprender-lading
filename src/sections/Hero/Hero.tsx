@@ -16,7 +16,7 @@ export function Hero({ onDownload }: { onDownload: () => void }) {
         >
           Un punto de venta para
           <br className="hidden lg:block" />{" "}
-          <span className="text-zinc-500">cinco tipos de emprendimiento.</span>
+          <span className="text-zinc-500">tu emprendimiento.</span>
         </h1>
         <p className="mx-auto mt-5 max-w-[630px] text-[15px] leading-[1.8] text-muted md:mt-6">
           Restaurantes, alquileres, granel, comercio por unidad y servicios.
